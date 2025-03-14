@@ -1,0 +1,132 @@
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.95);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo h1 {
+  color: #F5F0DE;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #F5F0DE;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #F5F0DE;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after, 
+.nav-link.active::after {
+  width: 100%;
+}
+
+.register-btn {
+  background-color: #F5F0DE;
+  color: #151515;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.register-btn:hover {
+  background-color: #22B5B5;
+  color: #F5F0DE;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #F5F0DE;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.mobile-nav-links {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 6rem 2rem 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 5;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.mobile-register-btn {
+  margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .mobile-nav-links {
+    display: flex;
+  }
+}
